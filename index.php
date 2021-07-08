@@ -209,8 +209,8 @@ tr:nth-child(even) {
 		<div class="menu">
 			<a href="#profile">
 			<div class="user">
-			<p>Name</p>
-			<p>Email</p>
+			<p><?php echo($_SESSION["username"])?></p>
+			<p><?php echo($_SESSION["email"])?></p>
 			</div>
 			</a>
 			<a href="#help">
