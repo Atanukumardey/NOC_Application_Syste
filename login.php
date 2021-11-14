@@ -41,11 +41,13 @@ if (isset($_POST["signin"])) {
   $email = mysqli_real_escape_string($conn, $_POST["email"]);
   $password = mysqli_real_escape_string($conn, md5($_POST["password"]));
 
-  $check_email = mysqli_query($conn, "SELECT id FROM users WHERE email='$email' AND password='$password'");
+  $check_email = mysqli_query($conn, "SELECT id, full_name FROM users WHERE email='$email' AND password='$password'");
 
   if (mysqli_num_rows($check_email) > 0) {
     $row = mysqli_fetch_assoc($check_email);
     $_SESSION["user_id"] = $row['id'];
+    $_SESSION["username"] = $row['full_name'];
+    $_SESSION["email"] = $email;
     header("Location: index.php");
   } else {
     echo "<script>alert('Login details is incorrect. Please try again.');</script>";
