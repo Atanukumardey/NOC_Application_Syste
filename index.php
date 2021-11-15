@@ -1,5 +1,23 @@
 <?php
+require('logInfo.php');
+include 'config.php';
+
 session_start();
+
+$event_type = "signedin";
+$ip = log_info::get_ip();
+$os = log_info::get_os();
+$browser = log_info::get_browser();
+$device = log_info::get_device();
+$sql = "INSERT INTO log_info (ip_address, os, browser,device_type,time,event_type) VALUES ('$ip', '$os', '$browser','$device',NOW(),'$event_type')";
+$result = mysqli_query($conn, $sql);
+
+// if ($result) {
+// echo "script>alert('Loginfo Successfull');</script>";
+// } else {
+//   echo "<script>alert('User log_info failed.');</script>";
+// }
+
 if(!isset($_SESSION["user_id"])){
 	header("Location: index.php");
 }

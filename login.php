@@ -1,10 +1,11 @@
 <?php
 
+require('logInfo.php');
 include 'config.php';
 
 session_start();
 
-error_reporting(0);
+error_reporting(1);
 
 if (isset($_SESSION["user_id"])) {
   header("Location: index.php");
@@ -65,74 +66,73 @@ if (isset($_POST["signin"])) {
   <link rel="stylesheet" href="css/nstyle.css" />
 
   <style>
-    
     .image {
-  transition: transform 1.1s ease-in-out;
-  transition-delay: 0.4s;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 65%;
-  height: auto;
-}
-.container:before {
-  content: "";
-  position: absolute;
-  height: 2000px;
-  width: 2000px;
-  top: -10%;
-  right: 48%;
-  transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #4b5364b7 0%, #767a88 100%);
-  transition: 1.8s ease-in-out;
-  border-radius: 50%;
-  z-index: 6;
-}
-.btn:hover {
-  background-color: #727473;
-}
+      transition: transform 1.1s ease-in-out;
+      transition-delay: 0.4s;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 65%;
+      height: auto;
+    }
 
-.btn.transparent:hover {
-  background-color: white;
-  color: #212222;
-}
+    .container:before {
+      content: "";
+      position: absolute;
+      height: 2000px;
+      width: 2000px;
+      top: -10%;
+      right: 48%;
+      transform: translateY(-50%);
+      background-image: linear-gradient(-45deg, #4b5364b7 0%, #767a88 100%);
+      transition: 1.8s ease-in-out;
+      border-radius: 50%;
+      z-index: 6;
+    }
 
-.container {
-  position: relative;
-  width: 100%;
-  background-color: rgb(187, 189, 195);
-  min-height: 100vh;
-  overflow: hidden;
-}
+    .btn:hover {
+      background-color: #727473;
+    }
 
-.btn {
-  width: 380px;
-  background-color: #545557;
-  border: none;
-  outline: none;
-  height: 49px;
-  border-radius: .3rem;
-  /* display: block; */
-  color: rgb(255, 255, 255);
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 10px 0;
-  cursor: pointer;
-  transition: 0.5s;
-}
+    .btn.transparent:hover {
+      background-color: white;
+      color: #212222;
+    }
 
-pre {
-  font-family: "Poppins", sans-serif;
-}
+    .container {
+      position: relative;
+      width: 100%;
+      background-color: rgb(187, 189, 195);
+      min-height: 100vh;
+      overflow: hidden;
+    }
 
-.social-icon:hover {
-  background: #424244;
-  border-color: #97979b;
-  color: white;
-}
+    .btn {
+      width: 380px;
+      background-color: #545557;
+      border: none;
+      outline: none;
+      height: 49px;
+      border-radius: .3rem;
+      /* display: block; */
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: 0.5s;
+    }
 
+    pre {
+      font-family: "Poppins", sans-serif;
+    }
 
-</style>
+    .social-icon:hover {
+      background: #424244;
+      border-color: #97979b;
+      color: white;
+    }
+  </style>
   <title>Sign in & Sign up Form</title>
 </head>
 
@@ -143,7 +143,7 @@ pre {
 
 
 
-      <!--Sign in form-->
+        <!--Sign in form-->
         <form action="" method="post" class="sign-in-form">
 
           <h2 class="title">Sign in</h2>
@@ -200,7 +200,7 @@ pre {
     </div>
 
     <div class="panels-container">
-      
+
       <div class="panel left-panel">
         <div class="content">
           <h3>New here ?</h3>
